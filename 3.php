@@ -10,7 +10,7 @@
 
 <body>
     <main class="min-h-screen bg-slate-300 flex gap-4 justify-center items-center p-4">
-        <form method="post" class="bg-slate-100 max-w-xl p-4 flex flex-col gap-4 rounded-lg shadow">
+        <form method="get" class="bg-slate-100 max-w-xl p-4 flex flex-col gap-4 rounded-lg shadow">
             <div class="flex flex-col gap-1">
                 <label for="name">Insira seu nome:</label>
                 <input placeholder="Insira seu nome" class="rounded-lg p-2 bg-slate-100 border border-slate-700" id="name" name="name" required />
@@ -37,10 +37,10 @@
 
         <section class="bg-slate-100 max-w-xl p-4 flex flex-col gap-2 rounded-lg shadow">
             <?php
-            if (isset($_POST["name"], $_POST["age"], $_POST["gender"])) {
-                $name = $_POST["name"];
-                $gender = $_POST["gender"];
-                $age = $_POST["age"];
+            if (isset($_GET["name"], $_GET["age"], $_GET["gender"])) {
+                $name = $_GET["name"];
+                $gender = $_GET["gender"];
+                $age = $_GET["age"];
 
                 if ($gender === 'fem' && $age < 25) {
                     echo "<p><strong>$name</strong>: ACEITA</p>";
